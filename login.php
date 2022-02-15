@@ -1,20 +1,37 @@
-<?php ?>
+<?php
+session_start();
+//if DB
+//require('connect.php');
+//
+//if (isset($_POST['username']) and isset($_POST['password'])) {
+//    $username = $_POST['username'];
+//    $password = $_POST['password'];
+//
+//    if($count == 1){
+//        $_SESSION['username'] = $username;
+//        header('Location: patient.php');
+//    }else{echo 'Invalid Login Credentials.';}
+//}
+//if (isset($_SESSION['username'])) { echo 'succes!';}
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>mspr_reseau_grp5</title>
         <script>
-
+            function connect(){
+                
+            }
         </script>
     </head>
     <body>
         <h1>Login</h1>
         <div style="display: grid; width: 500px; border: solid 1px #000; padding: 10px;">
             <label for="">pseudo</label>
-            <input type="text">
+            <input id="username" type="text">
             <label>password</label>
-            <input type="password">
-            <button onclick="" style="margin-top: 10px;">Login</button>
+            <input id="password" type="password">
+            <button id="login" onclick="" style="margin-top: 10px;">Login</button>
         </div>
     </body>
     <footer>
