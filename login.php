@@ -15,26 +15,35 @@ session_start();
 //if (isset($_SESSION['username'])) { echo 'succes!';}
 ?>
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>mspr_reseau_grp5</title>
-        <script>
-            function connect(){
-                
-            }
-        </script>
-    </head>
-    <body>
-        <h1>Login</h1>
-        <div style="display: grid; width: 500px; border: solid 1px #000; padding: 10px;">
-            <label for="">pseudo</label>
-            <input id="username" type="text">
-            <label>password</label>
-            <input id="password" type="password">
-            <button id="login" onclick="" style="margin-top: 10px;">Login</button>
+<html lang="">
+<head>
+    <title>Connexion</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200&display=swap" rel="stylesheet">
+</head>
+<header class="police">
+</header>
+<body>
+<div class="div-center police">
+    <div class="login-titre texte">Clinique le Châtelet</div>
+    <div class="pad-left texte">
+        <div class="cadre-login">
+            <label class="label-identifiant">Identifiant :
+                <input type="text" class="input-identifiant">
+            </label>
+            <label class="label-password">Mot de passe :
+                <input type="password" class="input-password">
+            </label>
+            <!-- TODO ajouter la double authentification et la vérif sur IP-->
+            <button class="button" onclick="location.href='accueil.php'">Connexion</button>
         </div>
-    </body>
-    <footer>
-
-    </footer>
+    </div>
+</div>
+    <img class="taille-ecran" src="../images/nts_vue_du_ciel.jpeg" alt="Nantes vue du ciel">
+</body>
+<footer>
+</footer>
 </html>
