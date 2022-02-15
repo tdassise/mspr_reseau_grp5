@@ -20,7 +20,7 @@ $navigateur = $_SERVER['HTTP_USER_AGENT']; // avoir toutes les infos avec get_br
         <div class="cadre-accueil">
             Navigateur web : <?php echo $navigateur ?>
         </div>
-        <div style="z-index: -1">wizzhezio</div>
+        <div style="z-index: -1">wizzhezio boomer</div>
     </div>
 </div>
 <img class="taille-ecran" src="../images/nts_vue_du_ciel.jpeg" alt="Nantes vue du ciel">
