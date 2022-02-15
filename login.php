@@ -1,5 +1,6 @@
 <?php
 session_start();
+//TODO: coonect to the AD
 //if DB
 //require('connect.php');
 //
@@ -19,9 +20,13 @@ session_start();
     <head>
         <title>mspr_reseau_grp5</title>
         <script>
+            var loginButton = document.getElementById("login");
+
             function connect(){
-                
+                //TODO: authentification
+                window.location.replace("file:///C:/Users/Julien/Desktop/mspr_reseau_grp5/patient.php");
             }
+            loginButton.addEventListener(connect());
         </script>
     </head>
     <body>
