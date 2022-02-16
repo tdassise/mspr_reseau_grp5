@@ -40,7 +40,6 @@ $req->insert($navigateur, $adresse_ip);
         </div>
     </div>
 </div>
-    <img class="taille-ecran" src="../images/nts_vue_du_ciel.jpeg" alt="Nantes vue du ciel">
 </body>
 <footer>
 </footer>
