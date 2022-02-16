@@ -2,7 +2,7 @@
 session_start();
 
 require('../database/config_db.php');
-require'../database/Requetes.php';
+require '../database/Requetes.php';
 
 $navigateur = $_SERVER['HTTP_USER_AGENT'];
 $adresse_ip = $_SERVER['REMOTE_ADDR'];
@@ -40,7 +40,7 @@ $req->insert($navigateur, $adresse_ip);
         </div>
     </div>
 </div>
-    <img class="taille-ecran" src="../images/nts_vue_du_ciel.jpeg" alt="Nantes vue du ciel">
+<img class="taille-ecran" src="../images/nts_vue_du_ciel.jpeg" alt="Nantes vue du ciel">
 </body>
 <footer>
 </footer>
