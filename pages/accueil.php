@@ -4,7 +4,7 @@ $navigateur = $_SERVER['HTTP_USER_AGENT']; // avoir toutes les infos avec get_br
 <!DOCTYPE html>
 <html lang="">
 <head>
-    <title>Accueil</title>
+    <title>Connexion</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/accueil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,16 +14,46 @@ $navigateur = $_SERVER['HTTP_USER_AGENT']; // avoir toutes les infos avec get_br
 <header class="police">
 </header>
 <body>
-<div class="div-center police">
-    <div class="accueil-titre texte">Accueil</div>
-    <div class="texte">
-        <div class="cadre-accueil">
-            Navigateur web : <?php echo $navigateur ?>
-        </div>
-    </div>
+<h1>Accueil</h1>
+<div id="searchBar">
+    <input type="search">
 </div>
-<img class="taille-ecran" src="../images/nts_vue_du_ciel.jpeg" alt="Nantes vue du ciel">
+<ul id="list-patient">
+    <li>
+        <img src="../images/patient.jpg" alt="image exemple">
+        <p>* ID patient *</p>
+    </li>
+    <li>
+        <img src="../images/patient.jpg" alt="image exemple">
+        <p>* ID patient *</p>
+    </li>
+    <li>
+        <img src="../images/patient.jpg" alt="image exemple">
+        <p>* ID patient *</p>
+    </li>
+    <li>
+        <img src="../images/patient.jpg" alt="image exemple">
+        <p>* ID patient *</p>
+    </li>
+    <li>
+        <img src="../images/patient.jpg" alt="image exemple">
+        <p>* ID patient *</p>
+    </li>
+    <li>
+        <img src="../images/patient.jpg" alt="image exemple">
+        <p>* ID patient *</p>
+    </li>
+    <li>
+        <img src="../images/patient.jpg" alt="image exemple">
+        <p>* ID patient *</p>
+    </li>
+    <li>
+        <img src="../images/patient.jpg" alt="image exemple">
+        <p>* ID patient *</p>
+    </li>
+</ul>
 </body>
 <footer>
+
 </footer>
 </html>
