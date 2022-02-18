@@ -1,5 +1,5 @@
 <?php
-$navigateur = $_SERVER['HTTP_USER_AGENT']; // avoir toutes les infos avec get_browser (méthode php)
+$navigateur = $_SERVER['HTTP_USER_AGENT']; // permet de récupérer le navigateur (user agent) de l'utilisateur
 ?>
 <!DOCTYPE html>
 <html lang="">
