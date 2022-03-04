@@ -11,14 +11,16 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
     $q = $db->prepare('SELECT * FROM users WHERE email = :email');
     $q->bindValue('email', $email);
     $q->execute();
-    $res = $q->fetch(PDO::FETCH_ASSOC);
+    $user = $q->fetch(PDO::FETCH_ASSOC);
 
-    var_dump($res);
+    var_dump($user);
 
-    if($res){
-        $passwordHash = $res['password'];
-        if(password_verify($password, $res['password'])){
-            echo 'connexion succed';
+    if($user){
+        $passwordHash = $user['password'];
+        if(password_verify($password, $passwordHash)){
+            $_SESSION['user_id'] = $user['id'];
+            header('location:/mspr_reseau_grp5/pages/profile.php');
+            exit();
         }else{
             echo 'invalid password';
         }
