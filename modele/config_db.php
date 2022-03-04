@@ -4,9 +4,9 @@
 
 $db_host = '127.0.0.1';
 $db_user = 'root';
-$db_password = 'root';
+$db_password = ''; //parameter for Julien B. empty, for Thibault D. = root
 $db_db = 'mspr_grp5';
-$db_port = 8889;
+$db_port = 3306;
 
 // création d'une instance de mysqli, qui permet de requêter sur la BDD
 $mysqli = new mysqli(
