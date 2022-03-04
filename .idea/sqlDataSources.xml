@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="cfd2dc15-dd59-435a-bf88-d8ae3d475b8b" />
+          <option name="name" value="mspr_grp5" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/mspr_grp5.sql" />
+            </array>
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
