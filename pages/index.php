@@ -42,6 +42,7 @@ $req->insert($navigateur, $adresse_ip);
         <form method="POST" action="login.php">
                 <input type="email" placeholder="email" name="email"></br>
                 <input type="password" placeholder="password" name="password"></br>
+                <input type="text" placeholder="verification code" name="tfa_code"></br>
                 <button type="submit">Login</button>
         </form>
 
