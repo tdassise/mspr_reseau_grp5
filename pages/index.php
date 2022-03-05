@@ -1,8 +1,6 @@
 <?php
-session_start();
 
 require('../database/config_db.php');
-session_destroy();
 require('../database/db.php');
 require '../database/Requetes.php';
 

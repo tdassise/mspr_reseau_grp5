@@ -24,19 +24,27 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
     if($user){
         $passwordHash = $user['password'];
         if(password_verify($password, $passwordHash)){
-            if(!$user['secret'] || $tfa->verifyCode($user['secret'], $tfaCode)){
-                $_SESSION['user_id'] = $user['id'];
-                header('location:/mspr_reseau_grp5/pages/profile.php');
+            if($tfa->verifyCode($user['secret'], $tfaCode)){
+                header('location:/mspr_reseau_grp5/pages/accueil.php');
                 exit();   
-            }else{
-                echo 'invalid TOTP code';
             }
-        }else{
-            echo 'invalid password';
         }
+        if(!$user['secret']){
+            $_SESSION['user_id'] = $user['id'];
+            header('location:/mspr_reseau_grp5/pages/profile.php');
+            exit();
+        }
+        if($tfaCode != $user['secret']){
+            echo '<h1>invalid TOTP code</h1>';
+        }
+        if($password != $user['password']){
+        echo '<h1>invalid password</h1>';
+        }
+      
     }else{
-        echo 'invalid ID';
+        echo '<h1>invalid ID</h1>';
     }
 }
-
 ?>
+
+<a id="logout-btn" href="/mspr_reseau_grp5/pages/logout.php">Logout</a>

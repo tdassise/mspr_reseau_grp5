@@ -14,6 +14,7 @@ $navigateur = $_SERVER['HTTP_USER_AGENT']; // avoir toutes les infos avec get_br
 <header class="police">
 </header>
 <body>
+<a id="logout-btn" href="/mspr_reseau_grp5/pages/logout.php">Logout</a>
 <h1>Accueil</h1>
 <div id="searchBar">
     <input type="search">
