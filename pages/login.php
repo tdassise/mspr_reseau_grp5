@@ -21,30 +21,39 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 
     if($debug == 1){var_dump($user);}
 
-    if($user){
-        $passwordHash = $user['password'];
-        if(password_verify($password, $passwordHash)){
-            if($tfa->verifyCode($user['secret'], $tfaCode)){
-                header('location:/mspr_reseau_grp5/pages/accueil.php');
-                exit();   
+    if ($user['loginAttempt'] < 0){
+        if($user){
+            $passwordHash = $user['password'];
+            if(password_verify($password, $passwordHash)){
+                if($tfa->verifyCode($user['secret'], $tfaCode)){
+                    header('location:/mspr_reseau_grp5/pages/accueil.php');
+                    exit();   
+                }
             }
+            if(!$user['secret']){
+                $_SESSION['user_id'] = $user['id'];
+                header('location:/mspr_reseau_grp5/pages/profile.php');
+                exit();
+                loginAttempts($user['loginAttempt'], $user['id'], $db);
+            }
+            if($tfaCode != $user['secret']){
+                echo '<h1>invalid TOTP code</h1>';
+                loginAttempts($user['loginAttempt'], $user['id'], $db);
+            }
+            if($password != $user['password']){
+            echo '<h1>invalid password</h1>';
+            loginAttempts($user['loginAttempt'], $user['id'], $db);
+            }
+        
+        }else{
+            echo '<h1>invalid ID</h1>';
+            loginAttempts($user['loginAttempt'], $user['id'], $db);
         }
-        if(!$user['secret']){
-            $_SESSION['user_id'] = $user['id'];
-            header('location:/mspr_reseau_grp5/pages/profile.php');
-            exit();
-        }
-        if($tfaCode != $user['secret']){
-            echo '<h1>invalid TOTP code</h1>';
-        }
-        if($password != $user['password']){
-        echo '<h1>invalid password</h1>';
-        }
-      
     }else{
-        echo '<h1>invalid ID</h1>';
+        echo 'come back later!';
     }
 }
+echo $user['loginAttempt'];
 ?>
 
 <a id="logout-btn" href="/mspr_reseau_grp5/pages/logout.php">Logout</a>
